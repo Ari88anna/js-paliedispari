@@ -17,15 +17,41 @@ function numeroCasuale() {
 
     var numeroProdotto = Math.floor (Math.random()*4) + 1;
 
-    return numeroProdotto; 
-    console.log(numeroProdotto)      
+    return numeroProdotto;       
 }
 
-function somma( numeroUtente, numeroComputer) {
+// var somma = utenteNumero + numeroCasuale();
+// console.log(somma);
 
-    var risultato = numeroUtente + numeroComputer;
+vincitore(utenteNumero, numeroCasuale());
 
-    return risultato;
+function vincitore(numeroPreso, numeroDato) {
 
+    var somma = numeroPreso + numeroDato;
+
+    if ( somma % 2 == 0) {
+
+       var risultato ='pari';
+    
+    }else {
+    
+       var risultato ='dispari';
+    }
+    
+
+    if ( numeroPreso == somma ) {
+        
+        alert ('Hai vinto!');
+
+    } else {
+        alert('Hai perso!');
+    }
+
+    return somma
 }
+
+
+
+
+
 
