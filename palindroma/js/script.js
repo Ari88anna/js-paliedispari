@@ -11,11 +11,11 @@ parolaDaVerificare(inputUtente)
 
 // creo una funzione per capire se la parola inserita è palindroma
 
-function parolaDaVerificare(parolaUtente, palindromo) {
+function parolaDaVerificare(parolaUtente) {
 
     var palindromo = true;
 
-    for ( var i= 0; i < parolaUtente.length; i++) {
+    for ( var i= 0; i < parolaUtente.length; i++ ) {
     
         var lettereParola = parolaUtente[i];
         // console.log(lettereParola); 
@@ -24,10 +24,11 @@ function parolaDaVerificare(parolaUtente, palindromo) {
         console.log(lettereInvertite)
 
         if( lettereInvertite != lettereParola ) {
-        palindromo = false;                
-        }
-    }
 
-    console.log(palindromo)
+            palindromo = false;     
+
+        }        
+    }
+    
 }
 
