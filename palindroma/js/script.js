@@ -5,11 +5,7 @@
 // chiedo all'utente di inserire una parola (stringa)
 var inputUtente = prompt('Inserisci una parola');
 
-// suddivido i caratteri della parola
-
 parolaDaVerificare(inputUtente);
-
-
 
 // creo una funzione per capire se la parola inserita è palindroma
 
@@ -18,13 +14,16 @@ function parolaDaVerificare(parolaUtente) {
     var palindromo = true;    
 
     for ( var i= 0; i < parolaUtente.length; i++ ) {
-    
+
+        // suddivido i caratteri della parola
         var lettereParola = parolaUtente[i];
         // console.log(lettereParola); 
 
+        //inverto la parola
         var lettereInvertite = parolaUtente[parolaUtente.length -1 -i];
-        console.log(lettereInvertite)
+        console.log(lettereInvertite);
 
+        // faccio il confronto: controllo se la parola scritta dall'utente è palindroma
         if( lettereInvertite != lettereParola ) {
 
             palindromo = false;          
