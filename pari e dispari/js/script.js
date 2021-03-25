@@ -4,7 +4,7 @@
 // Dichiariamo chi ha vinto.
 
 // facciamo scegliere aal'utente se vuole pari o dispari
-var pariODispari = prompt('Pari o dispari?');
+var pariODispari = prompt('pari o dispari?');
 
 // e chiediamo un numero da 1 a 5
 
@@ -16,16 +16,16 @@ console.log(utenteNumero)
 function numeroCasuale() {
 
     var numeroProdotto = Math.floor (Math.random()*4) + 1;
-
+    alert('il pc ha scelto '+ numeroProdotto);
     return numeroProdotto;       
 }
 
 // var somma = utenteNumero + numeroCasuale();
 // console.log(somma);
 
-vincitore(utenteNumero, numeroCasuale());
+// sommaPariDispari(utenteNumero, numeroCasuale());
 
-function vincitore(numeroPreso, numeroDato) {
+function sommaPariDispari(numeroPreso, numeroDato) {
 
     var somma = numeroPreso + numeroDato;
 
@@ -36,18 +36,19 @@ function vincitore(numeroPreso, numeroDato) {
     }else {
     
        var risultato ='dispari';
-    }
-    
+    } 
 
-    if ( numeroPreso == somma ) {
+    return risultato; 
+}
+
+// Dichiariamo chi ha vinto.
+
+if ( pariODispari == sommaPariDispari(utenteNumero, numeroCasuale() ) ) {
         
-        alert ('Hai vinto!');
+    alert ('Hai vinto!');
 
-    } else {
-        alert('Hai perso!');
-    }
-
-    return somma
+} else {
+    alert('Hai perso!');
 }
 
 
