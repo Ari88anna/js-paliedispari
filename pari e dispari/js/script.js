@@ -11,25 +11,52 @@ var pariODispari = prompt('pari o dispari?');
 var utenteNumero = parseInt( prompt('Dammi un numero da 1 a 5') );
 console.log(utenteNumero) 
 
-// generare numero casuale utilizzando una funzione
+// generiamo numero random per il computer
+var numeroRandomComputer = getRandomNum(1, 5);
 
-function numeroCasuale() {
+// sommare i numeri
+var somma = utenteNumero + numeroRandomComputer;
 
-    var numeroProdotto = Math.floor (Math.random()*4) + 1;
-    alert('il pc ha scelto '+ numeroProdotto);
-    return numeroProdotto;       
+// stabilire se la somma è pari o dispari
+var sommaPariODispari = valutaPariDispari(somma);
+
+// Dichiariamo chi ha vinto.
+var messaggioFinale;
+
+if ( utenteNumero == sommaPariODispari) {
+        
+    messaggioFinale = 'Hai vinto!';
+
+} else {
+
+    messaggioFinale = 'Hai perso!';
 }
 
-// var somma = utenteNumero + numeroCasuale();
-// console.log(somma);
+alert(messaggioFinale);
 
-// sommaPariDispari(utenteNumero, numeroCasuale());
+// FUNZIONI
 
-function sommaPariDispari(numeroPreso, numeroDato) {
+// fuzione per generare un numero random
+//
+// min -> numero minimo da generare
+// max-> numero massimo da generare
+function getRandomNum(min, max) {
+    return Math.floor(Math.random()*(max-min +1)) +min;         
+}
 
-    var somma = numeroPreso + numeroDato;
 
-    if ( somma % 2 == 0) {
+
+// Valuta se il numero è pari o dispari
+//
+//numeroDaValutare
+//
+//return: stringa 'pari' se il numero è pari, altrimenti 'dispari'
+
+function valutaPariDispari(numeroDaValutare) {
+
+    var risultato
+
+    if ( numeroDaValutare % 2 == 0) {
 
        var risultato ='pari';
     
@@ -41,15 +68,7 @@ function sommaPariDispari(numeroPreso, numeroDato) {
     return risultato; 
 }
 
-// Dichiariamo chi ha vinto.
 
-if ( pariODispari == sommaPariDispari(utenteNumero, numeroCasuale() ) ) {
-        
-    alert ('Hai vinto!');
-
-} else {
-    alert('Hai perso!');
-}
 
 
 

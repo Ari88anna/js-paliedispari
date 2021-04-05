@@ -5,47 +5,49 @@
 // chiedo all'utente di inserire una parola (stringa)
 var inputUtente = prompt('Inserisci una parola');
 
-parolaDaVerificare(inputUtente);
+var parolaUtente = palindromo(inputUtente);
 
-// Funzioni
+var messaggioFinale;
+    
+    if (parolaUtente == true ) {
+
+        messaggioFinale = 'La parola inserita E\' un palindromo' ;
+
+    } else {
+
+        messaggioFinale = 'La parola inserita NON è un palindromo';
+    } 
+    
+    alert(messaggioFinale);
+
+// FUNZIONI
 
 // Funzione per capire se una parola è un palindromo
 //
-// parolaUtente -> parola che confronteremo per capire se è un palindromo 
+// parolaDaVerificare -> parola che confronteremo per capire se è un palindromo 
 
-function parolaDaVerificare(parolaUtente) {
+function palindromo(parolaDaVerificare) {
 
-    var palindromo = true;    
+    var isPalindromo = true;    
 
-    for ( var i= 0; i < parolaUtente.length; i++ ) {
+    for ( var i= 0; i < parolaDaVerificare.length; i++ ) {
 
         // suddivido i caratteri della parola
-        var lettereParola = parolaUtente[i];
+        var lettereParola = parolaDaVerificare[i];
         // console.log(lettereParola); 
 
         //inverto la parola
-        var lettereInvertite = parolaUtente[parolaUtente.length -1 -i];
+        var lettereInvertite = parolaDaVerificare[parolaDaVerificare.length -1 -i];
         console.log(lettereInvertite);
 
         // faccio il confronto: controllo se la parola scritta dall'utente è palindroma
         if( lettereInvertite != lettereParola ) {
 
-            palindromo = false;          
+            isPalindromo = false;          
         }        
     }
-    
-    var messaggioFinale;
-    
-    if (palindromo == false ) {
 
-        messaggioFinale = 'La parola inserita non è un palindromo' ;
-
-    } else {
-
-        messaggioFinale = 'La parola inserita è un palindromo';
-    } 
-    
-    alert(messaggioFinale);
+    return isPalindromo;
           
 }
 
